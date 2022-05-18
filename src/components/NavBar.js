@@ -1,4 +1,5 @@
 import DropDownButton from "./DropDownButton";
+import DropDownCareers from "./DropDownCareers";
 
 
 const flexBar = {
@@ -16,9 +17,9 @@ const NavBar = () => {
     <nav style={flexBar}>
       <h3 className="side-margin">sap</h3>
 
-      <DropDownButton name="features" opc1="todolist" opc2="calendar" opc3="reminders" opc4="planning" />
-      <a href="" className="side-margin">Careers</a>
-      <a href="" className="side-margin">About</a>
+      <DropDownButton name="features" item1="todolist" item2="calendar" item3="reminders" item4="planning" />
+      <DropDownCareers name="Careers" item1="History"
+        item2="Our Team" item3="Blog" />     <a href="" className="side-margin">About</a>
       <article className="absolute loggin">
         <a href="" className="side-margin">Loggin</a>
         <a href="" className="side-margin">Register</a>
