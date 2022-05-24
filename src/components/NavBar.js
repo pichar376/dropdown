@@ -1,30 +1,33 @@
+import { useState } from "react";
+import ContainerLoggin from "./ContainerLoggin";
 import DropDownButton from "./DropDownButton";
-import DropDownCareers from "./DropDownCareers";
+import DropDownCompany from "./DropDownCompany";
 
 
 const flexBar = {
-  position: "relative",
+  width: "100%",
   display: "flex",
   alignItems: "center",
-  height: "5em"
+  height: "5em",
+  justifyContent: "space-between",
 
 }
 const mySelect = {
 
 }
 const NavBar = () => {
+  const [opacityColorButton, setOpacityColorButton] = useState("btn-inactive");
   return (
+
     <nav style={flexBar}>
-      <h3 className="side-margin">sap</h3>
+      <h3 className="weight">snap</h3>
 
-      <DropDownButton name="features" item1="todolist" item2="calendar" item3="reminders" item4="planning" />
-      <DropDownCareers name="Careers" item1="History"
-        item2="Our Team" item3="Blog" />     <a href="" className="side-margin">About</a>
-      <article className="absolute loggin">
-        <a href="" className="side-margin">Loggin</a>
-        <a href="" className="side-margin">Register</a>
-      </article>
-
+      <DropDownButton name="Features" item1="todolist" item2="calendar" item3="reminders" item4="planning" />
+      <DropDownCompany name="Company" item1="History"
+        item2="Our Team" item3="Blog" />
+      <a href="" className="side-margin">Careers</a>
+      <a href="" className="side-margin">About</a>
+      <ContainerLoggin />
     </nav>
 
   );

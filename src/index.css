@@ -61,10 +61,6 @@ display: none;
   width: 5em;
   border-radius: 2px;
 }
-.feature-btn > input{
-border: none;
-color:#00000097;
-}
 .careers-list{
   background-color: white;
   box-shadow: 0 0 1rem #00000025;
@@ -99,6 +95,70 @@ border: none;
 .btn-active{
 color:#000;
 border: none;
+font-weight: 450;
 }
 
+.weight{
+font-weight: 700;
+}
 
+a{
+  color:#00000097;
+}
+
+.main-text{
+  font-weight: 1200px;
+  font-size: 50px;
+  
+}
+.myStyleMain{
+display: flex;
+flex-flow: column wrap;
+margin: 3rem;
+width:50vw;
+height: 70vh;
+border:thin solid gray;
+  
+}
+.button-learn{
+  width: 6em;
+  border-radius: 7px;
+  background-color: black;
+  color:white;
+  height: 2em;
+  margin-top: 1rem;
+}
+.mainLogo{
+  display:flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  width:100%;
+  border:thin solid gray;
+margin: 2rem 0;
+}
+.main-logo>svg{ 
+
+}
+.container-loggin{
+
+}
+.SideContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  height: 70vh;
+
+}
+.MyContainerMain{
+display: flex;
+justify-content: space-evenly;
+height: 80%;
+
+
+}
+.image-desktop{
+  
+  height:100%;
+}

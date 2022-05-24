@@ -1,40 +1,49 @@
 import { useState } from "react";
 import styledComponents from "styled-components";
 
-const MydropDownButton = styledComponents.div`
+
+
+const DropDownButton = ({ name, item1, item2, item3, item4 }) => {
+
+  const MydropDownButton = styledComponents.div`
 position:relative;
 display:flex;
 flex-direction:column;
 align-items:center;
 border:thin solid grey:
 height:30vh;
-margin:1em
-
+margin:1em;
 `
+  const [activeMenu, setActiveMenu] = useState(false);
+
+  const [addStyle, setAddStyle] = useState("none");
+
+  const [opacityColorFeatures, setOpacityColorFeatures] = useState("btn-inactive");
 
 
-const DropDownButton = ({ name, item1, item2, item3, item4 }) => {
+
 
   const downArrow = <svg width="10" height="6" xmlns="http://www.w3.org/2000/svg"><path stroke="#686868" strokeWidth="1.5" fill="none" d="m1 5 4-4 4 4" /></svg>;
 
   const upArrow = <svg width="10" height="6" xmlns="http://www.w3.org/2000/svg"><path stroke="#686868" stroke-width="1.5" fill="none" d="m1 1 4 4 4-4" /></svg>;
 
-  const [activeMenu, setActiveMenu] = useState(false);
-  const [addStyle, setAddStyle] = useState("none");
   const handleClick = () => {
     if (!activeMenu) {
       setActiveMenu(true)
       setAddStyle("feature-list")
+      setOpacityColorFeatures("btn-active")
     } else {
       setActiveMenu(false)
       setAddStyle("none")
+      setOpacityColorFeatures("btn-inactive")
     }
   }
+
 
   return (
     <MydropDownButton>
       <section className="feature-btn" onClick={handleClick}>
-        <input type="button" value={name} />
+        <input type="button" value={name} className={opacityColorFeatures} />
         {activeMenu ? downArrow : upArrow}
       </section>
 
