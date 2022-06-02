@@ -1,19 +1,49 @@
-import ContainerLoggin from "./ContainerLoggin";
+import styledComponents from "styled-components";
 import Main from "./Main";
 import MainContainer from "./MainContainer";
 import NavBar from "./NavBar";
-import SideContainer from "./SideContainer";
+const MyContainerDropButton = styledComponents.div`
+.btn-inactive{
+  margin-right:.5em;
+  border:none;
+  color:#eee;
+  background-color:transparent;
+}
+.btn-active {
+  background-color:transparent;
+  color: #eee;
+  border: none;
+  margin-right:.5em;
+  font-weight: 450;
+}
+}
+
+@media(min-width:700px){
+
+.btn-active {
+  color: #000;
+  border: none;
+  font-weight: 450;
+}
+.btn-inactive {
+  color: #00000097;
+  border: none;
+  display: flex;
+}
+}
+
+`
+
 
 const ContainerDropDown = () => {
   return (
-    <div>
-      <NavBar />
+    <MyContainerDropButton>
+      <article className="nav-bar">
+        <NavBar />
+      </article>
+
       <MainContainer />
-
-
-      <footer><h1>Fotter</h1></footer>
-
-    </div>
+    </MyContainerDropButton >
   );
 }
 

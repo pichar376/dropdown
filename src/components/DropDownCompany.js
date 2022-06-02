@@ -3,12 +3,46 @@ import styledComponents from "styled-components";
 
 const DropDownCompany = ({ name, item1, item2, item3 }) => {
   const MydropDownButton = styledComponents.div`
+
+  
 position:relative;
 display:flex;
-flex-direction:column;
-border:thin solid grey:
-height:30vh;
-margin:1em
+flex-flow:row wrap;
+margin:1em;
+  section{
+  display:flex;
+  align-items:center;
+@media(max-width:700px){
+
+.btn-inactive{
+  margin-right:.5em;
+  border:none;
+  color:#eee;
+  background-color:transparent;
+}
+.btn-active {
+  background-color:transparent;
+  color: #eee;
+  border: none;
+  margin-right:.5em;
+  font-weight: 450;
+}
+}
+
+@media(min-width:700px){
+
+.btn-active {
+  color: #000;
+  border: none;
+  font-weight: 450;
+}
+.btn-inactive {
+  color: #00000097;
+  border: none;
+  display: flex;
+}
+}
+}
 
 `
 
@@ -27,7 +61,7 @@ margin:1em
   const handleClick = () => {
     if (!activeMenu) {
       setActiveMenu(true)
-      setAddStyle("careers-list")
+      setAddStyle("company-list")
       setOpacityColorCompany("btn-active")
     } else {
       setActiveMenu(false)
@@ -39,7 +73,7 @@ margin:1em
 
   return (
     <MydropDownButton>
-      <section className="careers-btn" onClick={handleClick}>
+      <section onClick={handleClick}>
         <input type="button" value={name} className={opacityColorCompany} />
 
         {activeMenu ? downArrow : upArrow}
