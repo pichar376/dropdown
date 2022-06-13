@@ -22,27 +22,6 @@ a {
   text-decoration: none;
 }
 
-.none {
-  display: none;
-}
-.feature-list {
-  background-color: white;
-  box-shadow: 0 0 1rem #00000025;
-  position: absolute;
-  text-align: center;
-  flex-flow: column nowrap;
-  transform: translateX(-1em);
-  top: 2em;
-
-  width: 7em;
-  height: 9em;
-  border-radius: 0.3em;
-  list-style-type: none;
-  padding: 0;
-  display: block;
-  z-index: 999;
-}
-
 .item-feature {
   display: flex;
   justify-content: space-evenly;
@@ -58,20 +37,7 @@ a {
   width: 5em;
   border-radius: 2px;
 }
-.company-list {
-  background-color: white;
-  box-shadow: 0 0 1rem #00000025;
-  position: absolute;
-  transform: translateX(-1em);
-  top: 2em;
-  color: #00000097;
-  width: 90px;
-  height: 6em;
-  border-radius: 0.3em;
-  list-style-type: none;
-  padding: 0;
-  display: block;
-}
+
 .item-careers {
   display: flex;
   justify-content: flex-start;
@@ -124,4 +90,5 @@ a {
 }
 .margin {
   margin: 1em;
+  scroll-margin-right: none;
 }

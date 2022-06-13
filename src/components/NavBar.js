@@ -3,89 +3,79 @@ import styledComponents from "styled-components";
 import DropDownButton from "./DropDownButton";
 import DropDownCompany from "./DropDownCompany";
 import { BsList } from 'react-icons/bs';
-import Loggin from "./Loggin";
 
 
 const NavBarStyled = styledComponents.nav`
-
-
-  width:100;
-  display: flex;
-  align-items:center;
-  justify-content:space-between;
-  height: 5em;
-  top: 0;
-
-  .burguer{
-    position:fixed;
-    top:0rem;
-    right:1rem;
-    font-size:3rem;
-  @media(min-width:700px){
-      display:none;
-     }
-    }
-    
-   
-    
-     .item-loggin{
-       display:flex;
-       justify-content:flex-end;
-      flex-basis:70%;
-      
-
-      
-    }
-  //  &{
-  //    @media(max-width:700px){
-  //      position:relative;
-
-  //    }
-   }
-  .links{
+width:100vw;
 display:flex;
+align-items:center;
+font-size:14px;
+  
+
+.links{
+display:none;
+width:100%;
+@media(min-width:770px){
+  display:flex;
 justify-content:space-evenly;
 align-items:center;
-transition:all .6s ease-in-out;
-@media(max-width:700px){
-      position:absolute;
-      background-color:#00000075;
-      top:4rem;
-      left:1000px;
-      right:0;
-      bottom:0;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-
-      .drop-button-company,.drop-button{
-        margin-left:2.5rem;
-      }
+}
+}
 
 
-      a{
-        color:white;
-      }
-      
-      
-      
-    }
+.burguer{
+  display:none;
+  position:fixed;
+  top:-1rem;
+  right:1rem;
+  @media(max-width:770px){
+    display:block;
+    font-size:50px;
   }
-  .links.active{
-      top:4rem;
-      left:0px;
-      right:0px;
-      bottom:0;
+}
+a{
+  margin: 2em 2em;
+  transition:all .3s ease-out;
+  &:hover{
+    color:#000;
   }
+}
 
-
+.snap{
+font-weight: 700;
+margin-right:1.5rem;
+}
+  `
+const ContainerLoggin = styledComponents.div`
+display:flex;
+justify-content:flex-end;
+align-items:center;
+ flex-grow:1;
   
   
-    }
-     
 
+  .loggin{
+  }
+
+  .register{
+    display:flex;
+justify-content:center;
+align-items:center;
+    border:thin solid gray;
+    width:5rem;
+    height:2rem;
+    border-radius:10px;
+    transition:all .3s ease-out;
+  
+    &:hover{
+     border:thin solid black;
+     color:#000;
+    }
+  }
 
 `
+
+
 
 const NavBar = () => {
   const [opacityColorButton, setOpacityColorButton] = useState("btn-inactive");
@@ -98,27 +88,28 @@ const NavBar = () => {
 
     <NavBarStyled>
 
-      <h3>snap</h3>
-      <div className={`links ${active ? "active" : ""}`}>
-        <article class="drop-button">
-          <DropDownButton name="Features" item1="todolist" item2="calendar" item3="reminders" item4="planning" />
-        </article>
+      <h3 className="snap">snap</h3>
+      <div className="links">
+
+        <DropDownButton name="Features" item1="todolist" item2="calendar" item3="reminders" item4="planning" />
 
 
-        <article className="drop-button-company">
-          <DropDownCompany name="Company" item1="History"
-            item2="Our Team" item3="Blog" />
-        </article>
+
+
+        <DropDownCompany name="Company" item1="History"
+          item2="Our Team" item3="Blog" />
+
 
 
 
 
         <a href="" className="side-margin">Careers</a>
         <a href="" className="side-margin">About</a>
-        <article className="item-loggin">
-          <Loggin />
+        <ContainerLoggin>
+          <a href="" className="loggin">Loggin</a>
+          <a href="" className="register"><span>Register</span></a>
+        </ContainerLoggin>
 
-        </article>
       </div>
       <article className="burguer" onClick={handleMenu}>
         <BsList />
@@ -134,3 +125,16 @@ const NavBar = () => {
 }
 
 export default NavBar;
+
+
+
+
+
+
+
+
+
+
+
+
+

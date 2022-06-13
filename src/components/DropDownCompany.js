@@ -1,90 +1,71 @@
 import { useState } from "react";
 import styledComponents from "styled-components";
-
-const DropDownCompany = ({ name, item1, item2, item3 }) => {
-  const MydropDownButton = styledComponents.div`
-
-  
-position:relative;
+const MydropDownButton = styledComponents.div`
 display:flex;
-flex-flow:row wrap;
-margin:1em;
-  section{
-  display:flex;
-  align-items:center;
-@media(max-width:700px){
+position:relative;
+`
+const MenuList = styledComponents.ul`
+display:${({ click }) => (click ? "flex" : "none")};
+ background-color: white;
+ box-shadow: 0 0 1rem #00000025;
+ border-radius:3px;
+  position: absolute;
+  flex-flow:column wrap;
+  justify-content:space-evenly;
+  top:2rem;
+  width:5rem;
+  height:6rem;
+  left:0rem;
 
-.btn-inactive{
-  margin-right:.5em;
-  border:none;
-  color:#eee;
-  background-color:transparent;
-}
-.btn-active {
-  background-color:transparent;
-  color: #eee;
-  border: none;
-  margin-right:.5em;
-  font-weight: 450;
-}
-}
+`
+const ItemList = styledComponents.li`
+list-style-type:none;
+margin-left:-1.4rem;
+font-size:15px;
+`
+const StyledButton = styledComponents.button`
+border:none;
+color:${({ click }) => (click ? "black" : "#00000075")};
 
-@media(min-width:700px){
-
-.btn-active {
-  color: #000;
-  border: none;
-  font-weight: 450;
+`
+const ArrowButton = styledComponents.article`
+svg{
+  margin-left:.5rem;
 }
-.btn-inactive {
-  color: #00000097;
-  border: none;
-  display: flex;
-}
-}
-}
-
 `
 
 
 
-  const [activeMenu, setActiveMenu] = useState(false);
 
-  const [addStyle, setAddStyle] = useState("none");
+const DropDownCompany = ({ name, item1, item2, item3 }) => {
 
-  const [opacityColorCompany, setOpacityColorCompany] = useState("btn-inactive");
+
+
+
+  const [click, setClick] = useState(false);
 
   const downArrow = <svg width="10" height="6" xmlns="http://www.w3.org/2000/svg"><path stroke="#686868" strokeWidth="1.5" fill="none" d="m1 5 4-4 4 4" /></svg>;
 
   const upArrow = <svg width="10" height="6" xmlns="http://www.w3.org/2000/svg"><path stroke="#686868" strokeWidth="1.5" fill="none" d="m1 1 4 4 4-4" /></svg>;
 
-  const handleClick = () => {
-    if (!activeMenu) {
-      setActiveMenu(true)
-      setAddStyle("company-list")
-      setOpacityColorCompany("btn-active")
-    } else {
-      setActiveMenu(false)
-      setAddStyle("none")
-      setOpacityColorCompany("btn-inactive")
 
-    }
+  const handleClick = () => {
+    setClick(!click)
   }
 
   return (
-    <MydropDownButton>
-      <section onClick={handleClick}>
-        <input type="button" value={name} className={opacityColorCompany} />
+    <MydropDownButton onClick={handleClick}>
+      <StyledButton click={click}>{name}</StyledButton>
+      <ArrowButton click={click}>
+        {click ? downArrow : upArrow}
+      </ArrowButton>
 
-        {activeMenu ? downArrow : upArrow}
-      </section>
 
-      <ul className={addStyle}>
-        <li className="item-company">{item1}</li>
-        <li className="item-company">{item2}</li>
-        <li className="item-company" >{item3}</li>
-
-      </ul>
+      <MenuList click={click}>
+        <ItemList >{item1}</ItemList>
+        <ItemList  >{item2}</ItemList>
+        <ItemList >{item3}</ItemList>
+      </MenuList>
     </MydropDownButton >
   );
 }

@@ -3,6 +3,9 @@ import Main from "./Main";
 import MainContainer from "./MainContainer";
 import NavBar from "./NavBar";
 const MyContainerDropButton = styledComponents.div`
+.none {
+  display: none;
+}  
 .btn-inactive{
   margin-right:.5em;
   border:none;
@@ -31,6 +34,8 @@ const MyContainerDropButton = styledComponents.div`
   display: flex;
 }
 }
+
+
 
 `
 

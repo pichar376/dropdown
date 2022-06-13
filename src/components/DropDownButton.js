@@ -10,6 +10,14 @@ justify-content:center;
 border:thin solid grey:
 height:30vh;
 margin:1em;
+transition:background-color .2s ease-in;
+@media(max-width:700px){
+  margin:0;
+  justify-content:center;
+ height:100%;
+  &:hover{
+  background-color:#eeeeee75;
+}
 .btn-active {
   color: #000;
   border: none;
@@ -20,6 +28,36 @@ margin:1em;
   border: none;
   display: flex;
 }
+
+}
+.feature-list {
+  background-color: white;
+  box-shadow: 0 0 1rem #00000025;
+  position: absolute;
+  text-align: center;
+  flex-flow: column nowrap;
+  transform: translateX(-1em);
+  top: 2em;
+
+  width: 7em;
+  height: 9em;
+  border-radius: 0.3em;
+  list-style-type: none;
+  padding: 0;
+  display: block;
+  z-index: 999;
+  @media(max-width:700px){
+    top:0rem;
+    right:12rem;
+  }
+}
+svg:hover {
+  cursor: pointer;
+}
+li{
+  font-size:15px;
+}
+
 `
 const WraperList = styledComponents.article`
 display:flex;
@@ -61,7 +99,7 @@ const DropDownButton = ({ name, item1, item2, item3, item4 }) => {
 
 
   return (
-    <MydropDownButton>
+    <MydropDownButton onClick={handleClick}>
       <section className="feature-btn" onClick={handleClick}>
         <input type="button" value={name} className={opacityColorFeatures} />
         {activeMenu ? downArrow : upArrow}
