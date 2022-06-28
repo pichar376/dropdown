@@ -1,6 +1,8 @@
 import styledComponents from "styled-components";
 const MainLogoStyles = styledComponents.div`
- 
+ @media(max-width:770px){
+  margin-bottom:4rem;
+ }
 `
 const MainLogo = () => {
   return (

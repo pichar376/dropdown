@@ -1,12 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar';
-import ContainerDropDown from './components/ContainerDropDown';
+import ContainerPage from './components/ContainerPage';
 
 function App() {
   return (
     <div>
-      <ContainerDropDown />
+      <ContainerPage />
     </div>
   );
 }

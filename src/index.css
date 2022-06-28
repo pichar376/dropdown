@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 body {
   background-color: #eee;
 }
@@ -11,84 +13,4 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
-}
-.absolute {
-  position: absolute;
-}
-.side-margin {
-  margin: 2em 2em;
-}
-a {
-  text-decoration: none;
-}
-
-.item-feature {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100%;
-  padding: 0.2em;
-}
-
-.feature-btn {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 5em;
-  border-radius: 2px;
-}
-
-.item-careers {
-  display: flex;
-  justify-content: flex-start;
-  margin-left: 1em;
-}
-
-.weight {
-  font-weight: 700;
-}
-.margin-right-1 {
-  margin-right: 2rem;
-}
-.margin-left-1 {
-  margin-left: 1rem;
-}
-
-a {
-  color: #00000097;
-}
-
-.main-text {
-  font-weight: 1200px;
-  font-size: 50px;
-}
-
-.button-learn {
-  width: 6em;
-  border-radius: 7px;
-  background-color: black;
-  color: white;
-  height: 2em;
-  margin-top: 1rem;
-}
-.mainLogo {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  width: 100%;
-  margin: 2rem 0;
-}
-
-.flex-menu {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.item-company {
-  margin-left: 0.5em;
-}
-.margin {
-  margin: 1em;
-  scroll-margin-right: none;
 }
